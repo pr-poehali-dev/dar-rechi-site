@@ -371,7 +371,7 @@ export default function Index() {
       {/* HERO */}
       <section id="hero" className="pt-16 min-h-screen flex items-center relative overflow-hidden">
         <div className="absolute inset-0">
-          <img src={HERO_IMG} alt="Нейрологопедический центр Дар речи" className="w-full h-full object-cover" />
+          <img src={HERO_IMG} alt="Нейрологопедический центр Дар речи" className="w-full h-full object-cover object-top" />
           <div className="absolute inset-0 bg-gradient-to-r from-[#1a1a1a]/80 via-[#1a1a1a]/50 to-transparent" />
         </div>
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 py-24">
