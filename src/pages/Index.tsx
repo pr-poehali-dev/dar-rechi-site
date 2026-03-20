@@ -6,7 +6,8 @@ const PHONE_HREF = "tel:+79047646745";
 const ADDRESS = "Казань, ул. Хайдара Бигичева, 4";
 const ADDRESS_URL = "https://yandex.com/maps/org/dar_rechi/212005083058/?ll=49.224767%2C55.784157&z=16.68";
 
-const LOGO_URL = "https://cdn.poehali.dev/projects/a253dbde-22a7-419b-bfe3-94007fdd9f3b/bucket/19947fc7-5f68-441b-ab10-4e8dd26e909c.jpg";
+const LOGO_URL = "https://cdn.poehali.dev/projects/a253dbde-22a7-419b-bfe3-94007fdd9f3b/bucket/dar-rechi/%D0%BB%D0%BE%D0%B3%D0%BE%20%D0%B4%D0%B0%D1%80%20%D1%80%D0%B5%D1%87%D0%B8.png";
+const MAX_LOGO_URL = "https://cdn.poehali.dev/projects/a253dbde-22a7-419b-bfe3-94007fdd9f3b/bucket/dar-rechi/%D0%BB%D0%BE%D0%B3%D0%BE%20%D0%BC%D0%B0%D0%BA%D1%81.png";
 const HERO_IMG = "https://cdn.poehali.dev/projects/a253dbde-22a7-419b-bfe3-94007fdd9f3b/bucket/b867cc4d-a403-4672-999a-79e5d7095347.jpg";
 const SUBMIT_URL = "https://functions.poehali.dev/7066643f-210d-493e-b06f-d7cb99742537";
 
@@ -14,19 +15,12 @@ const MAX_URL = "https://max.ru/u/f9LHodD0cOLIz1csy3TbpD-55K6FIzQBZb7e1QRHkOmKcU
 const TG_URL = "https://t.me/+79047646745";
 const VK_URL = "https://vk.com/public167590662";
 
-const MaxIcon = () => (
-  <svg width="18" height="18" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
-    <rect width="48" height="48" rx="12" fill="white" fillOpacity="0.2"/>
-    <text x="50%" y="54%" dominantBaseline="middle" textAnchor="middle" fontSize="22" fontWeight="bold" fill="white" fontFamily="Arial, sans-serif">М</text>
-  </svg>
-);
-
 const SocialButtons = ({ className = "" }: { className?: string }) => (
   <div className={`flex flex-wrap gap-3 ${className}`}>
     <a href={MAX_URL} target="_blank" rel="noopener noreferrer"
       className="flex items-center gap-2 bg-[#0077FF] text-white px-5 py-3 rounded-full font-semibold text-sm hover:opacity-90 transition-all hover:scale-105 shadow">
-      <MaxIcon />
-      Макс
+      <img src={MAX_LOGO_URL} alt="Max" className="w-5 h-5 object-contain rounded-sm" />
+      Max
     </a>
     <a href={TG_URL} target="_blank" rel="noopener noreferrer"
       className="flex items-center gap-2 bg-[#2AABEE] text-white px-5 py-3 rounded-full font-semibold text-sm hover:opacity-90 transition-all hover:scale-105 shadow">
@@ -219,12 +213,21 @@ const reviews = [
 
 type GalleryItem = { url: string; label?: string };
 
+const CDN = "https://cdn.poehali.dev/projects/a253dbde-22a7-419b-bfe3-94007fdd9f3b/bucket";
+
 const galleryItems: GalleryItem[] = [
-  { url: "https://cdn.poehali.dev/projects/a253dbde-22a7-419b-bfe3-94007fdd9f3b/bucket/fb55e00a-d0fe-4c46-a2e4-e4fa63876ec2.png", label: "Нейрозанятия с малышами" },
-  { url: "https://cdn.poehali.dev/projects/a253dbde-22a7-419b-bfe3-94007fdd9f3b/bucket/a00e6336-641d-41c1-9249-4f882525e348.png", label: "Нейрозанятия с 7 лет" },
-  { url: "https://cdn.poehali.dev/projects/a253dbde-22a7-419b-bfe3-94007fdd9f3b/bucket/e60fb6d2-6f6e-4202-adc0-855caa0fe72a.png", label: "Коррекция звукопроизношения" },
-  { url: "https://cdn.poehali.dev/projects/a253dbde-22a7-419b-bfe3-94007fdd9f3b/bucket/9230ced5-2b5d-4a1e-b22e-e31563f2210a.png", label: "Запуск речи" },
-  { url: "https://cdn.poehali.dev/projects/a253dbde-22a7-419b-bfe3-94007fdd9f3b/bucket/b867cc4d-a403-4672-999a-79e5d7095347.jpg", label: "" },
+  { url: `${CDN}/dar-rechi/1.jpeg` },
+  { url: `${CDN}/dar-rechi/2.jpeg` },
+  { url: `${CDN}/dar-rechi/3.jpeg` },
+  { url: `${CDN}/dar-rechi/4.jpeg` },
+  { url: `${CDN}/dar-rechi/5.jpeg` },
+  { url: `${CDN}/dar-rechi/6.jpeg` },
+  { url: `${CDN}/dar-rechi/7.jpeg` },
+  { url: `${CDN}/fb55e00a-d0fe-4c46-a2e4-e4fa63876ec2.png`, label: "Нейрозанятия с малышами" },
+  { url: `${CDN}/a00e6336-641d-41c1-9249-4f882525e348.png`, label: "Нейрозанятия с 7 лет" },
+  { url: `${CDN}/e60fb6d2-6f6e-4202-adc0-855caa0fe72a.png`, label: "Коррекция звукопроизношения" },
+  { url: `${CDN}/9230ced5-2b5d-4a1e-b22e-e31563f2210a.png`, label: "Запуск речи" },
+  { url: `${CDN}/b867cc4d-a403-4672-999a-79e5d7095347.jpg` },
 ];
 
 function ServiceModal({ service, onClose }: { service: ServiceDetail; onClose: () => void }) {
@@ -288,7 +291,7 @@ function PhotoCarousel({ items }: { items: GalleryItem[] }) {
   const onTouchEnd = (e: React.TouchEvent) => {
     if (touchStartX.current === null) return;
     const diff = touchStartX.current - e.changedTouches[0].clientX;
-    if (Math.abs(diff) > 40) diff > 0 ? next() : prev();
+    if (Math.abs(diff) > 40) { if (diff > 0) next(); else prev(); }
     touchStartX.current = null;
   };
 
