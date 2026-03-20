@@ -7,6 +7,7 @@ const ADDRESS = "Казань, ул. Хайдара Бигичева, 4";
 const ADDRESS_URL = "https://yandex.com/maps/org/dar_rechi/212005083058/?ll=49.224767%2C55.784157&z=16.68";
 
 const LOGO_URL = "https://cdn.poehali.dev/projects/a253dbde-22a7-419b-bfe3-94007fdd9f3b/bucket/60275f8e-73a3-4979-ab91-4a34bf5b0fda.jpg";
+const LOGO_NAV_URL = "https://cdn.poehali.dev/projects/a253dbde-22a7-419b-bfe3-94007fdd9f3b/bucket/19947fc7-5f68-441b-ab10-4e8dd26e909c.jpg";
 const MAX_LOGO_URL = "https://cdn.poehali.dev/projects/a253dbde-22a7-419b-bfe3-94007fdd9f3b/bucket/dar-rechi/%D0%BB%D0%BE%D0%B3%D0%BE%20%D0%BC%D0%B0%D0%BA%D1%81.png";
 const HERO_IMG = "https://cdn.poehali.dev/projects/a253dbde-22a7-419b-bfe3-94007fdd9f3b/bucket/b867cc4d-a403-4672-999a-79e5d7095347.jpg";
 const SUBMIT_URL = "https://functions.poehali.dev/7066643f-210d-493e-b06f-d7cb99742537";
@@ -354,7 +355,7 @@ export default function Index() {
       <header className="fixed top-0 left-0 right-0 z-40 bg-[#f5d119] shadow-md">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 flex items-center justify-between h-16">
           <button onClick={() => scrollTo("hero")} className="flex items-center gap-2">
-            <img src={LOGO_URL} alt="Дар речи" className="h-11 w-auto object-contain rounded-lg" />
+            <img src={LOGO_NAV_URL} alt="Дар речи" className="h-11 w-auto object-contain rounded-lg" />
           </button>
           <nav className="hidden md:flex items-center gap-6 text-sm font-semibold text-[#1a1a1a]">
             {navLinks.map(([id, label]) => (
