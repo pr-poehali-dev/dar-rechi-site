@@ -6,7 +6,7 @@ const PHONE_HREF = "tel:+79047646745";
 const ADDRESS = "Казань, ул. Хайдара Бигичева, 4";
 const ADDRESS_URL = "https://yandex.com/maps/org/dar_rechi/212005083058/?ll=49.224767%2C55.784157&z=16.68";
 
-const LOGO_URL = "https://cdn.poehali.dev/projects/a253dbde-22a7-419b-bfe3-94007fdd9f3b/bucket/dar-rechi/%D0%BB%D0%BE%D0%B3%D0%BE%20%D0%B4%D0%B0%D1%80%20%D1%80%D0%B5%D1%87%D0%B8.png";
+const LOGO_URL = "https://cdn.poehali.dev/projects/a253dbde-22a7-419b-bfe3-94007fdd9f3b/bucket/60275f8e-73a3-4979-ab91-4a34bf5b0fda.jpg";
 const MAX_LOGO_URL = "https://cdn.poehali.dev/projects/a253dbde-22a7-419b-bfe3-94007fdd9f3b/bucket/dar-rechi/%D0%BB%D0%BE%D0%B3%D0%BE%20%D0%BC%D0%B0%D0%BA%D1%81.png";
 const HERO_IMG = "https://cdn.poehali.dev/projects/a253dbde-22a7-419b-bfe3-94007fdd9f3b/bucket/b867cc4d-a403-4672-999a-79e5d7095347.jpg";
 const SUBMIT_URL = "https://functions.poehali.dev/7066643f-210d-493e-b06f-d7cb99742537";
@@ -385,28 +385,32 @@ export default function Index() {
           <div className="absolute inset-0 bg-gradient-to-r from-[#1a1a1a]/80 via-[#1a1a1a]/50 to-transparent" />
         </div>
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 py-24">
-          <div className="max-w-3xl">
-            <div className="inline-flex items-center gap-2 bg-white/20 backdrop-blur-sm border border-white/30 text-white px-4 py-2 rounded-full text-sm font-medium mb-6">
-              <Icon name="MapPin" size={14} />
-              <AddressLink className="text-white hover:text-[#f5d119]" />
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-8 items-center">
+            {/* Текст слева */}
+            <div>
+              <div className="inline-flex items-center gap-2 bg-white/20 backdrop-blur-sm border border-white/30 text-white px-4 py-2 rounded-full text-sm font-medium mb-6">
+                <Icon name="MapPin" size={14} />
+                <AddressLink className="text-white hover:text-[#f5d119]" />
+              </div>
+              <h1 className="font-cormorant text-4xl sm:text-5xl lg:text-6xl font-bold text-white leading-tight mb-4">
+                Нейрологопедический центр
+              </h1>
+              <p className="text-white/90 text-lg sm:text-xl leading-relaxed mb-8 max-w-xl">
+                Квалифицированная помощь детям с трудностями речевого развития, поведения и обучения с 2016 года.
+              </p>
+              <SocialButtons />
+              <div className="flex flex-wrap gap-8 mt-10">
+                {[["с 2016","работаем"],["10+ лет","опыт специалистов"],["500+","довольных семей"]].map(([num, label]) => (
+                  <div key={label}>
+                    <div className="font-cormorant text-3xl font-bold text-[#f5d119]">{num}</div>
+                    <div className="text-white/80 text-sm">{label}</div>
+                  </div>
+                ))}
+              </div>
             </div>
-            <div className="mb-4">
-              <img src={LOGO_URL} alt="Дар речи" className="h-12 sm:h-16 w-auto object-contain" style={{mixBlendMode: "screen"}} />
-            </div>
-            <h1 className="font-cormorant text-4xl sm:text-5xl lg:text-6xl font-bold text-white leading-tight mb-4">
-              Нейрологопедический центр
-            </h1>
-            <p className="text-white/90 text-lg sm:text-xl leading-relaxed mb-8 max-w-xl">
-              Квалифицированная помощь детям с трудностями речевого развития, поведения и обучения с 2016 года.
-            </p>
-            <SocialButtons />
-            <div className="flex flex-wrap gap-8 mt-10">
-              {[["с 2016","работаем"],["10+ лет","опыт специалистов"],["500+","довольных семей"]].map(([num, label]) => (
-                <div key={label}>
-                  <div className="font-cormorant text-3xl font-bold text-[#f5d119]">{num}</div>
-                  <div className="text-white/80 text-sm">{label}</div>
-                </div>
-              ))}
+            {/* Лого справа по центру */}
+            <div className="flex justify-center items-center">
+              <img src={LOGO_URL} alt="Дар речи" className="w-48 sm:w-64 h-auto object-contain drop-shadow-2xl" />
             </div>
           </div>
         </div>
