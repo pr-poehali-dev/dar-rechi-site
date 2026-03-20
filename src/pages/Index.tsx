@@ -10,16 +10,23 @@ const LOGO_URL = "https://cdn.poehali.dev/projects/a253dbde-22a7-419b-bfe3-94007
 const HERO_IMG = "https://cdn.poehali.dev/projects/a253dbde-22a7-419b-bfe3-94007fdd9f3b/bucket/b867cc4d-a403-4672-999a-79e5d7095347.jpg";
 const SUBMIT_URL = "https://functions.poehali.dev/7066643f-210d-493e-b06f-d7cb99742537";
 
-const WA_URL = "https://wa.me/79047646745?text=Здравствуйте!+Меня+заинтересовало+ваше+предложение";
+const MAX_URL = "https://max.ru/u/f9LHodD0cOLIz1csy3TbpD-55K6FIzQBZb7e1QRHkOmKcUz6-kpEtWncNz8";
 const TG_URL = "https://t.me/+79047646745";
 const VK_URL = "https://vk.com/public167590662";
 
+const MaxIcon = () => (
+  <svg width="18" height="18" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <rect width="48" height="48" rx="12" fill="white" fillOpacity="0.2"/>
+    <text x="50%" y="54%" dominantBaseline="middle" textAnchor="middle" fontSize="22" fontWeight="bold" fill="white" fontFamily="Arial, sans-serif">М</text>
+  </svg>
+);
+
 const SocialButtons = ({ className = "" }: { className?: string }) => (
   <div className={`flex flex-wrap gap-3 ${className}`}>
-    <a href={WA_URL} target="_blank" rel="noopener noreferrer"
-      className="flex items-center gap-2 bg-[#25D366] text-white px-5 py-3 rounded-full font-semibold text-sm hover:opacity-90 transition-all hover:scale-105 shadow">
-      <Icon name="MessageCircle" size={18} />
-      WhatsApp
+    <a href={MAX_URL} target="_blank" rel="noopener noreferrer"
+      className="flex items-center gap-2 bg-[#0077FF] text-white px-5 py-3 rounded-full font-semibold text-sm hover:opacity-90 transition-all hover:scale-105 shadow">
+      <MaxIcon />
+      Макс
     </a>
     <a href={TG_URL} target="_blank" rel="noopener noreferrer"
       className="flex items-center gap-2 bg-[#2AABEE] text-white px-5 py-3 rounded-full font-semibold text-sm hover:opacity-90 transition-all hover:scale-105 shadow">
@@ -375,13 +382,13 @@ export default function Index() {
           <div className="absolute inset-0 bg-gradient-to-r from-[#1a1a1a]/80 via-[#1a1a1a]/50 to-transparent" />
         </div>
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 py-24">
-          <div className="max-w-2xl">
+          <div className="max-w-3xl">
             <div className="inline-flex items-center gap-2 bg-white/20 backdrop-blur-sm border border-white/30 text-white px-4 py-2 rounded-full text-sm font-medium mb-6">
               <Icon name="MapPin" size={14} />
               <AddressLink className="text-white hover:text-[#f5d119]" />
             </div>
-            <div className="mb-6">
-              <img src={LOGO_URL} alt="Дар речи" className="h-24 w-auto object-contain rounded-xl drop-shadow-lg" />
+            <div className="mb-4 flex justify-center">
+              <img src={LOGO_URL} alt="Дар речи" className="h-44 sm:h-56 w-auto object-contain rounded-2xl drop-shadow-2xl" />
             </div>
             <h1 className="font-cormorant text-4xl sm:text-5xl lg:text-6xl font-bold text-white leading-tight mb-4">
               Нейрологопедический центр
