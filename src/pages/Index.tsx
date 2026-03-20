@@ -390,8 +390,8 @@ export default function Index() {
               <Icon name="MapPin" size={14} />
               <AddressLink className="text-white hover:text-[#f5d119]" />
             </div>
-            <div className="mb-4 flex justify-center">
-              <img src={LOGO_URL} alt="Дар речи" className="h-44 sm:h-56 w-auto object-contain rounded-2xl drop-shadow-2xl" />
+            <div className="mb-4">
+              <img src={LOGO_URL} alt="Дар речи" className="h-12 sm:h-16 w-auto object-contain" style={{mixBlendMode: "screen"}} />
             </div>
             <h1 className="font-cormorant text-4xl sm:text-5xl lg:text-6xl font-bold text-white leading-tight mb-4">
               Нейрологопедический центр
