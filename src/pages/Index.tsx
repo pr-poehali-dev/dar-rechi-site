@@ -353,8 +353,13 @@ export default function Index() {
 
       {/* NAV */}
       <header className="fixed top-0 left-0 right-0 z-40 bg-[#f5d119] shadow-md">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 flex items-center justify-between h-16">
-          <button onClick={() => scrollTo("hero")} className="flex items-center gap-2">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 flex items-center justify-between h-16 relative">
+          {/* Бургер слева на мобилке (невидимый на десктопе) */}
+          <button className="md:hidden text-[#1a1a1a] w-8" onClick={() => setMenuOpen(!menuOpen)}>
+            <Icon name={menuOpen ? "X" : "Menu"} size={24} />
+          </button>
+          {/* Лого: центр на мобилке, слева на десктопе */}
+          <button onClick={() => scrollTo("hero")} className="absolute left-1/2 -translate-x-1/2 md:static md:left-auto md:translate-x-0 flex items-center gap-2">
             <img src={LOGO_NAV_URL} alt="Дар речи" className="h-11 w-auto object-contain rounded-lg" />
           </button>
           <nav className="hidden md:flex items-center gap-6 text-sm font-semibold text-[#1a1a1a]">
@@ -365,9 +370,8 @@ export default function Index() {
           <div className="hidden md:flex items-center gap-3">
             <a href={PHONE_HREF} className="text-sm font-bold text-[#1a1a1a] hover:text-[#6eb42d]">{PHONE}</a>
           </div>
-          <button className="md:hidden text-[#1a1a1a]" onClick={() => setMenuOpen(!menuOpen)}>
-            <Icon name={menuOpen ? "X" : "Menu"} size={24} />
-          </button>
+          {/* Пустой элемент для баланса на мобилке */}
+          <div className="md:hidden w-8" />
         </div>
         {menuOpen && (
           <div className="md:hidden bg-[#f5d119] border-t border-[#e8c700] px-4 py-4 flex flex-col gap-4">
@@ -488,8 +492,8 @@ export default function Index() {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <div>
               <p className="text-[#6eb42d] font-semibold text-sm uppercase tracking-widest mb-3">О центре</p>
-              <h2 className="font-cormorant text-4xl sm:text-5xl font-bold text-[#1a1a1a] mb-6">
-                Нейрологопедический центр «Дар речи»
+              <h2 className="font-cormorant text-4xl sm:text-5xl font-bold mb-6">
+                <span className="italic text-[#f5d119]">Нейрологопедический центр «Дар речи»</span>
               </h2>
               <div className="space-y-4 text-[#444] leading-relaxed">
                 <p>Нейрологопедический центр «Дар речи» основан в 2016 году с целью оказания квалифицированной помощи детям с трудностями речевого развития, поведения и обучения.</p>
@@ -619,7 +623,7 @@ export default function Index() {
             </div>
             <div className="bg-white rounded-2xl overflow-hidden border border-gray-100 h-80 shadow-sm">
               <iframe
-                src="https://yandex.ru/map-widget/v1/?ll=49.224767%2C55.784157&z=16&mode=org&org=212005083058"
+                src="https://yandex.ru/map-widget/v1/?ll=49.224767%2C55.784157&z=16&mode=search&oid=212005083058&ol=biz"
                 width="100%" height="100%" frameBorder="0" title="Карта" className="w-full h-full"
               />
             </div>
